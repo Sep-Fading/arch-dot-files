@@ -1,0 +1,21 @@
+[options]
+# Set background color (hex)
+background = 000000
+
+# Font for the overlay text
+overlay_font = Monospace:16
+
+[binds]
+# Standard Controls (Explicitly added to be safe)
+q = quit
+f = fullscreen
+d = overlay
+p = exec echo "$imv_current_file"
+
+# Navigation
+<Right> = next
+<Left> = prev
+
+# --- YOUR CUSTOM WALLPAPER MACRO ---
+# Press w to run your wall script
+w = exec ~/.config/hypr/scripts/wall.sh "$imv_current_file" &

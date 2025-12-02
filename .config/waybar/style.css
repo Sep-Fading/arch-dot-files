@@ -1,0 +1,70 @@
+/* 1. Import the Pywal colors we generated in Step 2 */
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", "Roboto", "Arial";
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent; /* Allows gaps between modules */
+}
+
+/* --- THE MODULES (Islands) --- */
+
+/* Left: Workspaces */
+.modules-left {
+  background: @background;
+  opacity: 0.9;
+  border-radius: 10px;
+  border-bottom: 2px solid @color1; /* Accent color underline */
+  padding: 2px 5px;
+}
+
+/* Center: Clock */
+.modules-center {
+  background: @background;
+  opacity: 0.9;
+  border-radius: 10px;
+  border-bottom: 2px solid @color2; /* Secondary accent */
+  padding: 2px 15px;
+}
+
+/* Right: System Info */
+.modules-right {
+  background: @background;
+  opacity: 0.9;
+  border-radius: 10px;
+  border-bottom: 2px solid @color1;
+  padding: 2px 5px;
+}
+
+/* --- INDIVIDUAL ELEMENTS --- */
+
+#workspaces button {
+  padding: 0 5px;
+  color: @foreground;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: @color1;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#tray {
+  padding: 0 10px;
+  color: @foreground;
+}
+
+@keyframes blink {
+  to {
+    color: @foreground;
+  }
+}
