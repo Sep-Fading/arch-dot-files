@@ -7,3 +7,5 @@ With IMV if you run "imv -r /path/to/wallpapers" you can hit the w key on a wall
 Highly recommend having pywalfox on firefox to auto theme it too.
 
 There are some other stuff in there like waybar theming you can play around and add more stuff, I like mine simple and functional.
+
+There is a shell script that snap shots the dotfiles I use into here, you can adjust as you like if you have other config files you want in your own dotfiles you can just copy this.
