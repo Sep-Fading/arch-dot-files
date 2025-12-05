@@ -123,5 +123,6 @@ alias hyprlandconfig="nvim ~/.config/hypr/hyprland.conf"
 # nvim config quick access.
 alias nvimconfig="nvim ~/.config/nvim/"
 
+alias restart-walker="~/.config/hypr/scripts/walkerrestarter.sh"
 # Start Starship --- KEEP THIS AT BOTTOM
 eval "$(starship init zsh)"

@@ -24,6 +24,8 @@ user_pref("user.theme.midnight.animated.background", false);
 user_pref("user.theme.scarlet", false);
 user_pref("user.theme.fluent", false);
 user_pref("user.theme.fluent.thinkpad", false);
+user_pref("user.theme.brave", false);
+user_pref("user.theme.ayu", false)
 
 /* nav bar */
 user_pref("ultima.navbar.autohide", false);
@@ -33,7 +35,7 @@ user_pref("ultima.navbar.hide.buttons", true);
 user_pref("ultima.navbar.bookmarks.autohide", true);
 user_pref("ultima.navbar.bookmarks.compact", false);
 user_pref("ultima.navbar.bookmarks.position", "center");
-user_pref("ultima.navbar.bookmarks.scrollable", true);
+user_pref("ultima.navbar.bookmarks.scrollable", false);
 user_pref("ultima.navbar.bookmarks.float", false);
 user_pref("ultima.navbar.bookmarks.hide.icons", false);
 user_pref("ultima.navbar.windowcontrols.carl", false);
@@ -127,6 +129,7 @@ user_pref("ultima.spacing.relaxed.contextmenu", false);
 user_pref("ultima.contextmenu.no.icons", false);
 user_pref("ultima.contextmenu.no.navigation.icons", false);
 user_pref("ultima.contextmenu.reduce.options", false);
+user_pref("ultima.contextmenu.hide.separators", false);
 
 /* alternate styles */
 user_pref("ultima.spacing.compact", false);

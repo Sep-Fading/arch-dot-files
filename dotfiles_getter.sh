@@ -14,11 +14,13 @@ CONFIG_FOLDERS=(
     "mpv"
     "wal"
     "fontconfig"
+    "walker"
 )
 
 # List of individual files to backup
 HOME_FILES=(
     ".zshrc"
+    ".local/bin/screenshotter.sh"
 )
 
 # --- Setup ---

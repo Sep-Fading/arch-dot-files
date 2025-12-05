@@ -1,0 +1,19 @@
+/* FF Ultima Pywal Color Scheme */
+:root {
+    /* Browser Background (Dark/Base) */
+    --uc-browser-color: {background} !important;
+
+    /* Accent Color (Active Tabs, Highlights) */
+    --uc-accent-color: {color1} !important;
+
+    /* Secondary/Hover Colors */
+    --uc-secondary-color: {color2} !important;
+
+    /* Text Colors */
+    --uc-text-color: {foreground} !important;
+    --uc-muted-text: {color8} !important;
+
+    /* Sidebar / Panels */
+    --uc-sidebar-bg: {background} !important;
+    --uc-urlbar-bg: {color0} !important;
+}

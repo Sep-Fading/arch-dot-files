@@ -23,8 +23,26 @@ License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 
 @import url(theme/website-yt.css); /*                                 youtube */
 @import url(theme/website-private.css); /*               private new tab page */
 
-@import url(theme/color-schemes/apply-cs.css);            /* import color scheme colors */
+@import url(theme/color-schemes/apply-cs.css); /* import color scheme colors */
 @import url(theme/color-schemes/apply-cs-extensions.css); /* apply colors to extensions */
 @import url(theme/color-schemes/apply-cs-wallpapers.css); /* apply colors to wallpapers */
 
 @import url(custom.css);
+
+@-moz-document url("about:newtab"), url("about:home") {
+  /* Hide the Firefox Logo */
+  .logo-and-wordmark {
+    display: none !important;
+  }
+
+  /* Optional: Hide the Search Bar if you just want wallpaper + shortcuts */
+  /* .search-wrapper { display: none !important; } */
+
+  /* Optional: Move shortcuts down to center them if logo is gone */
+  .outer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0 !important;
+  }
+}

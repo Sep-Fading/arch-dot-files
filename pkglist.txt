@@ -8,6 +8,7 @@ dkms
 dolphin
 dunst
 efibootmgr
+elephant-all
 firefox
 git
 grim
@@ -16,6 +17,7 @@ gst-plugin-pipewire
 htop
 hyprland
 hyprpaper
+icaclient
 imv
 iwd
 kitty
@@ -67,13 +69,13 @@ unzip
 uwsm
 vazirmatn-fonts
 vesktop
+walker
 waybar
 wget
 wireless_tools
 wireplumber
 wl-clipboard
 woff2-font-awesome
-wofi
 xdg-desktop-portal-hyprland
 xdg-utils
 xorg-server
