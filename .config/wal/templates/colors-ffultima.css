@@ -1,5 +1,5 @@
 /* FF Ultima Pywal Color Scheme */
-:root {
+:root {{
     /* Browser Background (Dark/Base) */
     --uc-browser-color: {background} !important;
 
@@ -16,4 +16,4 @@
     /* Sidebar / Panels */
     --uc-sidebar-bg: {background} !important;
     --uc-urlbar-bg: {color0} !important;
-}
+}}

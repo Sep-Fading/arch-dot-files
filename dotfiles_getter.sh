@@ -17,10 +17,17 @@ CONFIG_FOLDERS=(
     "walker"
 )
 
+# List of folders in ~/.local/bin/ to backup
+LOCALBIN_FOLDERS=(
+    "wallpaper_cycler"
+
+)
+
 # List of individual files to backup
 HOME_FILES=(
     ".zshrc"
     ".local/bin/screenshotter.sh"
+    ".local/bin/sddm-sync.sh"
 )
 
 # --- Setup ---
@@ -32,11 +39,13 @@ fi
 
 echo ":: Starting Backup to $DEST_DIR..."
 mkdir -p "$DEST_DIR/.config"
+mkdir -p "$DEST_DIR/.local"
+mkdir -p "$DEST_DIR/.local/bin"
 
-# --- 1. Backup Config Folders (Smart Sync) ---
+# --- Backup Config Folders (Smart Sync) ---
 for folder in "${CONFIG_FOLDERS[@]}"; do
     if [ -d "$SOURCE_DIR/.config/$folder" ]; then
-        echo "   + Backing up .config/$folder (excluding .git)"
+        echo "   + Backing up ~/.config/$folder (excluding .git)"
         # rsync flags:
         # -a: archive (keeps permissions/dates)
         # -v: verbose
@@ -48,7 +57,17 @@ for folder in "${CONFIG_FOLDERS[@]}"; do
     fi
 done
 
-# --- 2. Backup Individual Files ---
+# --- Backup Local Bin Folders ---
+for folder in "${LOCALBIN_FOLDERS[@]}"; do
+    if [ -d "$SOURCE_DIR/.local/bin/$folder" ]; then
+        echo "   + Backing up ~/.local/bin/$folder (excluding .git)"
+        rsync -av --delete --exclude '.git' "$SOURCE_DIR/.local/bin/$folder" "$DEST_DIR/.local/bin/"
+    else
+        echo "   ! Warning: ~/.local/bin/$folder not found"
+    fi
+done
+
+# --- Backup Individual Files ---
 for file in "${HOME_FILES[@]}"; do
     if [ -f "$SOURCE_DIR/$file" ]; then
         echo "   + Backing up $file"
@@ -58,13 +77,13 @@ for file in "${HOME_FILES[@]}"; do
     fi
 done
 
-# --- 3. Backup Starship (Special Case) ---
+# --- Backup Starship (Special Case) ---
 if [ -f "$SOURCE_DIR/.config/starship.toml" ]; then
     echo "   + Backing up starship.toml"
     cp "$SOURCE_DIR/.config/starship.toml" "$DEST_DIR/.config/"
 fi
 
-# --- 4. Backup Firefox (Smart Find) ---
+# --- Backup Firefox (Smart Find) ---
 echo ":: Detecting Firefox Profile..."
 FF_CHROME_PATH=$(find "$SOURCE_DIR/.mozilla/firefox" -maxdepth 2 -name "chrome" -type d 2>/dev/null | head -n 1)
 
@@ -83,7 +102,7 @@ else
     echo "   ! Error: Could not find a Firefox profile with a chrome folder."
 fi
 
-# --- 5. Dump Package List (Arch) ---
+# --- Dump Package List (Arch) ---
 echo ":: Dumping package list..."
 pacman -Qqe > "$DEST_DIR/pkglist.txt"
 

@@ -1,0 +1,72 @@
+[global]
+    # --- DISPLAY ---
+    monitor = 0
+    follow = mouse
+    # Geometry: width x height - offset_x - offset_y
+    geometry = "300x50-30+20"
+    indicate_hidden = yes
+    shrink = no
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 10
+    
+    # --- BORDERS & CORNERS ---
+    # Thin border
+    frame_width = 2
+    # Specific color for the border (uses your accent color)
+    frame_color = "{color2}"
+    separator_color = frame
+    # Rounded corners
+    corner_radius = 10
+
+    # --- TEXT ---
+    font = Noto Sans 11
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    # --- ICONS ---
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 64
+    # path to default icons if needed
+    # icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    # --- HISTORY ---
+    sticky_history = yes
+    history_length = 20
+
+    # --- MOUSE ---
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/firefox -new-tab
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    startup_notification = false
+    verbosity = mesg
+    force_xinerama = false
+
+[urgency_low]
+    # Transparency: We append 'CC' (approx 80% opacity) to the hex code
+    background = "{background}CC"
+    foreground = "{foreground}"
+    timeout = 10
+
+[urgency_normal]
+    background = "{background}CC"
+    foreground = "{foreground}"
+    timeout = 10
+
+[urgency_critical]
+    background = "{background}CC"
+    foreground = "{foreground}"
+    frame_color = "{color1}"
+    timeout = 0
